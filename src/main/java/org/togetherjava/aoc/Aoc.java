@@ -4,7 +4,6 @@ import org.togetherjava.aoc.api.AbstractDay;
 import org.togetherjava.aoc.solutions.Day01;
 
 public class Aoc {
-
     public static void main(String[] args) {
         String sessionCookie = System.getenv("session_cookie");
         if(sessionCookie == null) {
@@ -13,8 +12,8 @@ public class Aoc {
 
         AbstractDay day = new Day01();
         System.out.println("#".repeat(50));
-        System.out.println("Part 1 solution: %s".formatted(day.part1Solution()));
-        System.out.println("Part 2 solution: %s".formatted(day.part2Solution()));
+        System.out.printf("Part 1 solution: %s%n", day.part1Solution());
+        System.out.printf("Part 2 solution: %s%n", day.part2Solution());
         System.out.println("#".repeat(50));
     }
 }
