@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+// https://adventofcode.com/2024/day/1
 public class Day01 extends AbstractDay {
 	List<Integer> left = new ArrayList<>();
 	List<Integer> right = new ArrayList<>();
