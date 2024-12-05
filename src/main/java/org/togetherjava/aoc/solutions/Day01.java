@@ -1,6 +1,8 @@
 package org.togetherjava.aoc.solutions;
 
-import org.togetherjava.aoc.api.AbstractDay;
+import org.togetherjava.aoc.core.annotations.AdventDay;
+import org.togetherjava.aoc.core.puzzle.PuzzleInput;
+import org.togetherjava.aoc.core.puzzle.PuzzleSolution;
 
 import java.util.ArrayList;
 import java.util.Collections;
