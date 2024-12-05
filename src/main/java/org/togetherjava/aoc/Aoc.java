@@ -3,6 +3,8 @@ package org.togetherjava.aoc;
 import org.togetherjava.aoc.api.AbstractDay;
 import org.togetherjava.aoc.solutions.Day01;
 import org.togetherjava.aoc.solutions.Day02;
+import org.togetherjava.aoc.solutions.Day03;
+import org.togetherjava.aoc.solutions.Day04;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +18,7 @@ public class Aoc {
             throw new IllegalStateException("You must set your session_cookie environment variable in your gradle settings.");
         }
 
-        AbstractDay day = new Day02();
+        AbstractDay day = new Day04();
 
         System.out.println("#".repeat(50));
         System.out.printf("Part 1 solution: %s%n", day.part1Solution());

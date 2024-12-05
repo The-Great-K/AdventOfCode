@@ -22,7 +22,7 @@ public class PuzzleInput {
     }
 
     public Character[][] as2DArray() {
-        List<String> input = asStream().collect(Collectors.toList());
+        List<String> input = asStream().toList();
         Character[][] matrix = new Character[input.size()][];
         for (int i = 0; i < input.size(); i++) {
             matrix[i] = input.get(i).chars().mapToObj(c -> (char) c).toArray(Character[]::new);
