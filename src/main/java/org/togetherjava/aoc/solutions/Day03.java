@@ -1,24 +1,23 @@
 package org.togetherjava.aoc.solutions;
 
-import org.togetherjava.aoc.api.AbstractDay;
+import org.togetherjava.aoc.core.annotations.AdventDay;
+import org.togetherjava.aoc.core.puzzle.PuzzleInput;
+import org.togetherjava.aoc.core.puzzle.PuzzleSolution;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 
 // https://adventofcode.com/2024/day/3
-public class Day03 extends AbstractDay {
-    public Day03() {
-        super(2024, 3);
-    }
-
+@AdventDay(day = 3)
+public class Day03 implements PuzzleSolution {
     @Override
-    public Object part1Solution() {
+    public Object part1(PuzzleInput input) {
         Pattern pattern = Pattern.compile("mul\\(\\d+,\\d+\\)");
 
         AtomicInteger result = new AtomicInteger(0);
 
-        getInput().asStream().forEach(line -> {
+        input.getLines().forEach(line -> {
             pattern.matcher(line).results().forEach(matchResultRaw -> {
                 String matchResult = matchResultRaw.group();
                 matchResult = matchResult.replaceAll("(mul\\(|\\))", "");
@@ -30,13 +29,13 @@ public class Day03 extends AbstractDay {
     }
 
     @Override
-    public Object part2Solution() {
+    public Object part2(PuzzleInput input) {
         Pattern pattern = Pattern.compile("(mul\\(\\d+,\\d+\\)|do\\(\\)|don't\\(\\))");
 
         AtomicInteger result = new AtomicInteger(0);
         AtomicBoolean compute = new AtomicBoolean(true);
 
-        getInput().asStream().forEach(line -> {
+        input.getLines().forEach(line -> {
             pattern.matcher(line).results().forEach(matchResultRaw -> {
                 String matchResult = matchResultRaw.group();
                 if (matchResult.equals("do()")) {

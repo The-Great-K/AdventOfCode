@@ -1,6 +1,8 @@
 package org.togetherjava.aoc.solutions;
 
-import org.togetherjava.aoc.api.AbstractDay;
+import org.togetherjava.aoc.core.annotations.AdventDay;
+import org.togetherjava.aoc.core.puzzle.PuzzleInput;
+import org.togetherjava.aoc.core.puzzle.PuzzleSolution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,14 +10,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 // https://adventofcode.com/2024/day/2
-public class Day02 extends AbstractDay {
-    public Day02() {
-        super(2024, 2);
-    }
-
+@AdventDay(day = 2)
+public class Day02 implements PuzzleSolution {
     @Override
-    public Object part1Solution() {
-        return getInput().asStream().filter(line -> {
+    public Object part1(PuzzleInput input) {
+        return input.getLines().stream().filter(line -> {
             List<String> levelStrings = Arrays.asList(line.split(" "));
             List<Integer> levels = levelStrings.stream().mapToInt(Integer::parseInt).boxed().toList();
 
@@ -32,8 +31,8 @@ public class Day02 extends AbstractDay {
     }
 
     @Override
-    public Object part2Solution() {
-        return getInput().asStream().filter(line -> {
+    public Object part2(PuzzleInput input) {
+        return input.getLines().stream().filter(line -> {
             List<String> levelStrings = Arrays.asList(line.split(" "));
             List<Integer> levels = levelStrings.stream().mapToInt(Integer::parseInt).boxed().toList();
 
