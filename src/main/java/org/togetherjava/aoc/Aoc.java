@@ -13,6 +13,6 @@ import java.util.Map;
 
 public class Aoc {
     public static void main(String[] args) {
-        AocRunner.run(2024, 6);
+        AocRunner.run(2024, 7);
     }
 }
