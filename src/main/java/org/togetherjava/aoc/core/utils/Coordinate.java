@@ -1,19 +1,16 @@
 package org.togetherjava.aoc.core.utils;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  *  Wrapper for x/y coordinates
  */
-@ToString
+//@ToString
 @Getter
 @Setter
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Coordinate {
-
     private int x;
     private int y;
 
@@ -23,8 +20,8 @@ public class Coordinate {
         return new Coordinate(x, y);
     }
 
-    public void move(Direction direction) {
-        move(direction, 1);
+    public Coordinate move(Direction direction) {
+        return move(direction, 1);
     }
 
     public void set(int x, int y) {
@@ -40,5 +37,10 @@ public class Coordinate {
     public void move(int x, int y) {
         this.x += x;
         this.y += y;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("(%d, %d)", x + 1, y + 1);
     }
 }

@@ -3,6 +3,7 @@ package org.togetherjava.aoc.solutions;
 import org.togetherjava.aoc.core.annotations.AdventDay;
 import org.togetherjava.aoc.core.puzzle.PuzzleInput;
 import org.togetherjava.aoc.core.puzzle.PuzzleSolution;
+import org.togetherjava.aoc.core.utils.Direction;
 
 // https://adventofcode.com/2024/day/4
 @AdventDay(day = 4)
@@ -50,30 +51,12 @@ public class Day04 implements PuzzleSolution {
         for (Direction direction : Direction.values()) {
             try {
                 for (int i = 0; i < "XMAS".length(); i++) {
-                    if (input[y + direction.yIncrease * i][x + direction.xIncrease * i] == "XMAS".toCharArray()[i]) {
-                        if (input[y + direction.yIncrease * i][x + direction.xIncrease * i] == 'S') wordCounter++;
+                    if (input[y + direction.getYDirection() * i][x + direction.getXDirection() * i] == "XMAS".toCharArray()[i]) {
+                        if (input[y + direction.getYDirection() * i][x + direction.getXDirection() * i] == 'S') wordCounter++;
                     } else break;
                 }
             } catch (ArrayIndexOutOfBoundsException _) {}
         }
         return wordCounter;
-    }
-
-    private enum Direction {
-        UP(0, -1),
-        UP_RIGHT(1, -1),
-        RIGHT(1, 0),
-        DOWN_RIGHT(1, 1),
-        DOWN(0, 1),
-        DOWN_LEFT(-1, 1),
-        LEFT(-1, 0),
-        UP_LEFT(-1, -1);
-
-        public final int xIncrease, yIncrease;
-
-        Direction(int xIncrease, int yIncrease) {
-            this.xIncrease = xIncrease;
-            this.yIncrease = yIncrease;
-        }
     }
 }
