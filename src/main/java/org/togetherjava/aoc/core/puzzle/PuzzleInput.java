@@ -32,6 +32,15 @@ public record PuzzleInput(String rawInput) {
         return matrix;
     }
 
+    public Integer[][] toNumberGrid() {
+        List<String> input = getLines();
+        Integer[][] matrix = new Integer[input.size()][];
+        for (int i = 0; i < input.size(); i++) {
+            matrix[i] = input.get(i).chars().mapToObj(c -> Integer.parseInt(String.valueOf((char) c))).toArray(Integer[]::new);
+        }
+        return matrix;
+    }
+
     /**
      *
      * @return Wrapped in {@link Matrix2D}
@@ -39,6 +48,15 @@ public record PuzzleInput(String rawInput) {
      */
     public Matrix2D<Character> toMatrix() {
         return new Matrix2D<>(toGrid());
+    }
+
+    /**
+     *
+     * @return Wrapped in {@link Matrix2D}
+     * to perform matrix operations on
+     */
+    public Matrix2D<Integer> toIntegerMatrix() {
+        return new Matrix2D<>(toNumberGrid());
     }
 
     /**
