@@ -8,7 +8,6 @@ import org.togetherjava.aoc.core.utils.Coordinate;
 import org.togetherjava.aoc.core.utils.Direction;
 import org.togetherjava.aoc.core.utils.Matrix2D;
 
-import java.rmi.UnexpectedException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
