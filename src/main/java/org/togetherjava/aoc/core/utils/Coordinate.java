@@ -14,6 +14,11 @@ public class Coordinate {
     private int x;
     private int y;
 
+    public Coordinate(Coordinate coordinate) {
+        this.x = coordinate.x;
+        this.y = coordinate.y;
+    }
+
     public Coordinate move(Direction direction, int magnitude) {
         int x = this.x + (direction.getXDirection() * magnitude);
         int y = this.y + (direction.getYDirection() * magnitude);
