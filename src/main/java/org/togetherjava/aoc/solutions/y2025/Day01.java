@@ -9,11 +9,11 @@ public class Day01 implements PuzzleSolution {
 
     @Override
     public Object part1(PuzzleInput input) {
-        return null;
+        return "Day 1 - Part 1";
     }
 
     @Override
     public Object part2(PuzzleInput input) {
-        return null;
+        return "Day 1 - Part 2";
     }
 }

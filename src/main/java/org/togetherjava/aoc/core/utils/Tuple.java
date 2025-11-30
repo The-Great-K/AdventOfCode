@@ -1,6 +1,5 @@
 package org.togetherjava.aoc.core.utils;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -8,8 +7,8 @@ import java.util.Objects;
 
 @Getter
 @RequiredArgsConstructor
-@EqualsAndHashCode
 public class Tuple<A, B> {
+
     private final A a;
     private final B b;
 

@@ -2,8 +2,8 @@ package org.togetherjava.aoc;
 
 import org.togetherjava.aoc.internal.AocRunner;
 
-public class Aoc {
+public class AOC {
     public static void main(String[] args) {
-        AocRunner.run(2024, 12);
+        AocRunner.run(2025, 1);
     }
 }
