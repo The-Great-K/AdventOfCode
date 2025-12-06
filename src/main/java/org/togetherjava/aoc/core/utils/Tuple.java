@@ -8,9 +8,8 @@ import java.util.Objects;
 @Getter
 @RequiredArgsConstructor
 public class Tuple<A, B> {
-
-    private final A a;
-    private final B b;
+    protected final A a;
+    protected final B b;
 
     public static <A, B> Tuple<A, B> of(A a, B b) {
         return new Tuple<>(a, b);
